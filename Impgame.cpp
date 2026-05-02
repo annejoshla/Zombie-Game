@@ -17,7 +17,6 @@ int main() {
     map<string, int> playerScore;
     multimap<int, Zombie> zombies;
 
-    // Zombies
     zombies.insert({1, {"Walker", 40, 10}});
     zombies.insert({1, {"Crawler", 30, 8}});
     zombies.insert({2, {"Runner", 50, 15}});
@@ -56,7 +55,6 @@ int main() {
             cout << "1. Quick Attack\n2. Normal Attack\n3. Heavy Attack\n4. Exit Game\n";
             cin >> choice;
 
-            // ✅ EXIT immediately
             if (choice == 4) {
                 cout << "\n👋 You exited the game!\n";
                 cout << "Final Score: " << playerScore[player] << endl;
@@ -84,7 +82,6 @@ int main() {
                 cout << "💥 Heavy Attack!\n";
             }
 
-            // Player attack
             z.health -= playerHit;
             cout << "You hit " << z.name << " for " << playerHit << " damage!\n";
 
@@ -93,8 +90,7 @@ int main() {
                 playerScore[player] += 20;
                 break;
             }
-
-            // Zombie attack
+            
             int zombieHit = rand() % z.attack + 5;
 
             if (choice == 3 && rand() % 2 == 0) {
