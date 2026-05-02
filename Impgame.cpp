@@ -61,7 +61,6 @@ int main() {
                 return 0;
             }
 
-            // ❌ invalid input
             if (choice < 1 || choice > 4) {
                 cout << "❌ Invalid choice! Try again.\n";
                 continue;
@@ -77,7 +76,7 @@ int main() {
                 playerHit = rand() % 14 + 12;
                 cout << "⚔️ Normal Attack!\n";
             }
-            else { // choice == 3
+            else { 
                 playerHit = rand() % 16 + 20;
                 cout << "💥 Heavy Attack!\n";
             }
@@ -90,7 +89,7 @@ int main() {
                 playerScore[player] += 20;
                 break;
             }
-            
+
             int zombieHit = rand() % z.attack + 5;
 
             if (choice == 3 && rand() % 2 == 0) {
